@@ -37,54 +37,55 @@ class DocumentViewController: UIViewController {
         }
     }
 }
-
-//Second Scene:TableViewにcsvのcolumnを表示させる処理
-// セクションを含めて、テーブルビューにデータを表示
-
+//11/18 test 始まり
 class ViewController: UIViewController,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    var dataInSection = [["青山","阿部"], ["加藤","川島","神田"], ["佐藤","坂田"], ["田中"]]
     
-    //入力されたグループ数をアルゴリズムの分ける数に配属させる処理
- 
+    //hsdGroupingTest.csv
+    var dataList:[String] = []
     
-    
-    
-//これは最後のUI（結果画面用！
-    //セクション:グループ数名を返す（）
-    var sectionIndex:[String] = ["あ行", "か行", "さ行", "た行"]
-    
-    //アルゴリズムによって並び替えられたデータをTableViewに返す
-    func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TestCell", for:indexPath) as UITableViewCell
-        var test = dataInSection[indexPath.section]
-        cell.textLabel?.text = test[indexPath.row]
-        return cell
-    }
-    
-    //データの個数を返す　　＊まだよくわかっていない
-    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
-        return dataInSection[section].count
-    }
-    
-    //セクション名を返す
-    func tableView(_ tableView:UITableView, titleForHeaderInSection section:Int) -> String?{
-        return sectionIndex[section]
-    }
-    
-    //セクションの個数を返す
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionIndex.count
-    }
     
     //最初からあるメソッド
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            //CSVファイルのパスを取得する。
+            let csvPath = Bundle.main.path(forResource: "hsdGroupingTest", ofType: "csv")
+            
+            //CSVファイルのデータを取得する。
+            let csvData = try String(contentsOfFile:csvPath!, encoding:String.Encoding.utf8)
+            
+            //改行区切りでデータを分割して配列に格納する。
+            dataList = csvData.components(separatedBy: "\n")
+            
+        } catch {
+            print(error)
+        }
     }
     
+    
+    //データを返すメソッド
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        
+        //セルを取得する。
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TestCell", for:indexPath) as UITableViewCell
+        
+        //カンマでデータを分割して配列に格納する。
+        let dataDetail = dataList[indexPath.row].components(separatedBy: ",")
+        
+        //セルのラベルにsex,skill,Region,Presen,JFを設定する。
+        cell.textLabel?.text = dataDetail[5]
+        cell.detailTextLabel?.text = "Sex：" + String(dataDetail[1])
+        
+        return cell
+    }
+    
+    
+    //データの個数を返すメソッド
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        return dataList.count
+    }
 }
+// 11/18test
 
-//final Scene: ファイルを出力する
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		746C1A761FBFED29003DB366 /* hsdGroupingTest.csv in Resources */ = {isa = PBXBuildFile; fileRef = 746C1A751FBFED29003DB366 /* hsdGroupingTest.csv */; };
 		74A123791FA088AC00F9B351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A123781FA088AC00F9B351 /* AppDelegate.swift */; };
 		74A1237B1FA088AC00F9B351 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A1237A1FA088AC00F9B351 /* DocumentBrowserViewController.swift */; };
 		74A1237D1FA088AC00F9B351 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A1237C1FA088AC00F9B351 /* DocumentViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		746C1A751FBFED29003DB366 /* hsdGroupingTest.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = hsdGroupingTest.csv; sourceTree = "<group>"; };
 		74A123751FA088AC00F9B351 /* File2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = File2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A123781FA088AC00F9B351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A1237A1FA088AC00F9B351 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				74A123781FA088AC00F9B351 /* AppDelegate.swift */,
 				74A1237A1FA088AC00F9B351 /* DocumentBrowserViewController.swift */,
 				74A1237C1FA088AC00F9B351 /* DocumentViewController.swift */,
+				746C1A751FBFED29003DB366 /* hsdGroupingTest.csv */,
 				74A1237E1FA088AC00F9B351 /* Document.swift */,
 				74A123801FA088AC00F9B351 /* Main.storyboard */,
 				74A123831FA088AC00F9B351 /* Assets.xcassets */,
@@ -246,6 +249,7 @@
 				74A123871FA088AC00F9B351 /* LaunchScreen.storyboard in Resources */,
 				74A123841FA088AC00F9B351 /* Assets.xcassets in Resources */,
 				74A123821FA088AC00F9B351 /* Main.storyboard in Resources */,
+				746C1A761FBFED29003DB366 /* hsdGroupingTest.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
