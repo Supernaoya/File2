@@ -37,6 +37,12 @@ class DocumentViewController: UIViewController {
         }
     }
 }
+//取得したデータをアプリ内に保存してホームへ帰る
+    
+
+
+
+
 
 //11/18 test 始まり
 class ViewController: UIViewController,UITableViewDataSource {
